@@ -54,7 +54,6 @@ if (!defined('BASEPATH')) {
                         <i class="bi bi-person-fill"></i>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="auth/register.php">Register</a></li>
                         <li><a class="dropdown-item text-danger" href="auth/logout.php">Logout</a></li>
                     </ul>
                 </li>

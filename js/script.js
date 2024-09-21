@@ -45,11 +45,3 @@ $(document).ready(function () {
     $(table).DataTable();
   });
 });
-
-function filterInput(input) {
-  let value = input.value.toLowerCase();
-  value = value.replace(/[^a-z0-9._]/g, "");
-  value = value.replace(/^\./, "");
-  value = value.replace(/\.$/, "");
-  input.value = value;
-}

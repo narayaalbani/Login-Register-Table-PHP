@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 20, 2024 at 08:56 PM
+-- Generation Time: Sep 21, 2024 at 04:54 AM
 -- Server version: 8.0.30
 -- PHP Version: 8.1.10
 
@@ -28,9 +28,8 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `account` (
-  `id_account` int NOT NULL,
+  `email` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NOT NULL,
   `name` varchar(255) NOT NULL,
-  `username` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
@@ -38,8 +37,8 @@ CREATE TABLE `account` (
 -- Dumping data for table `account`
 --
 
-INSERT INTO `account` (`id_account`, `name`, `username`, `password`) VALUES
-(5, 'tes', 'tes', '$2y$10$vNV0A6wHhJntg43Fow6OEesHv/nvxC8Qdagca1wj2afPiqAWfxx9q');
+INSERT INTO `account` (`email`, `name`, `password`) VALUES
+('tes@tes.com', 'tes', '$2y$10$rQ48dRJKo1sugzobtQjBG.fq.gBLVRdcXzqUSoOYsM6xSCDvjXAaC');
 
 -- --------------------------------------------------------
 
@@ -49,7 +48,7 @@ INSERT INTO `account` (`id_account`, `name`, `username`, `password`) VALUES
 
 CREATE TABLE `mahasiswa` (
   `nim` varchar(9) COLLATE utf8mb3_unicode_ci NOT NULL,
-  `golongan` varchar(1) COLLATE utf8mb3_unicode_ci NOT NULL,
+  `golongan` char(1) COLLATE utf8mb3_unicode_ci NOT NULL,
   `name` varchar(50) COLLATE utf8mb3_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_unicode_ci;
 
@@ -58,106 +57,105 @@ CREATE TABLE `mahasiswa` (
 --
 
 INSERT INTO `mahasiswa` (`nim`, `golongan`, `name`) VALUES
-('865927468', 's', 'Dr. Aubrey Walker'),
-('1816810', 't', 'Marlon Gaylord IV'),
-('5024', 't', 'Prof. Anjali Gerlach V'),
-('41', 'v', 'Kade Cormier MD'),
-('8127282', 'a', 'Corbin Welch'),
-('91', 'm', 'Dr. Jesse Schoen'),
-('748609521', 'v', 'Gretchen Hills'),
-('', 's', 'Thad Wolff'),
-('354', 'c', 'Alexanne Stracke'),
-('4807543', 'e', 'Daphney Ortiz'),
-('7', 'r', 'Grayson Runolfsdottir'),
-('520228841', 'd', 'Ms. Germaine Swaniawski II'),
-('85370', 'b', 'Darien Bashirian DDS'),
-('460057731', 'l', 'Kayden Koss'),
-('13301', 'h', 'Mellie Miller'),
-('750678629', 'v', 'Mr. Hubert Gorczany'),
-('28', 'q', 'Jensen Murphy'),
-('', 'n', 'Liam Connelly'),
-('53777157', 'q', 'Mrs. Linnie Rau IV'),
-('976', 'v', 'Orpha Strosin'),
-('26213', 'u', 'Prof. Queen Cummerata I'),
-('815793', 's', 'Noel Lockman MD'),
-('90473183', 'o', 'Dr. Leone Will'),
-('817', 'c', 'Schuyler Toy IV'),
-('8532', 'q', 'Mrs. Astrid Gibson'),
-('779182878', 'n', 'Alfred Stroman'),
-('6430', 'f', 'Abner Goyette'),
-('27', 'd', 'Hortense Flatley'),
-('97277081', 'a', 'Prof. Zula King DDS'),
-('21', 'm', 'Miss Stephanie Runolfsson IV'),
-('4012', 'i', 'Jacklyn Langworth V'),
-('', 'e', 'Bruce Mertz'),
-('21724524', 'u', 'Zack Barton'),
-('4', 'e', 'Maurice Boyle'),
-('', 'i', 'Prof. Dwight Harvey DVM'),
-('383131', 'i', 'Amir Huel'),
-('91', 's', 'Prof. Israel Kiehn V'),
-('3025603', 'v', 'Dr. Derek Sipes Jr.'),
-('867', 'e', 'Dr. Jarred Denesik'),
-('79592', 'e', 'Rocio Ledner'),
-('', 'e', 'Prof. Ricardo Wintheiser Sr.'),
-('572', 'r', 'Allan Wolf'),
-('86461', 'a', 'Imani Beier IV'),
-('', 'q', 'Aliya Considine'),
-('1', 'd', 'Johathan King'),
-('533877', 's', 'Keeley Corkery'),
-('', 'q', 'Ella Dicki'),
-('337201', 'n', 'Miss Cara Senger I'),
-('5', 'v', 'Kathryne Lowe'),
-('2', 'f', 'Rowland Hilpert MD'),
-('89865657', 'q', 'Eloisa Ebert'),
-('972711042', 'i', 'Marlene Wisozk'),
-('442', 'm', 'Mrs. Alexa Quigley DDS'),
-('984199549', 'e', 'Mrs. Angelita Wyman'),
-('4', 'e', 'Georgiana McKenzie'),
-('3268', 'a', 'Kari Lesch PhD'),
-('543', 's', 'Lela Auer'),
-('30026', 'i', 'Dr. Amira Hansen'),
-('', 'd', 'Mrs. Alba O\'Hara Jr.'),
-('3548', 'e', 'Malika Reinger'),
-('628838', 'q', 'Ms. Shanel Turcotte IV'),
-('39', 'm', 'Fern O\'Connell'),
-('2', 'c', 'Andreanne Eichmann'),
-('7293', 'l', 'Ms. Pearlie Bernhard'),
-('85135', 'o', 'Miss Aniya Lebsack'),
-('2', 'c', 'Lafayette Larson'),
-('426819853', 'd', 'Ettie D\'Amore'),
-('268', 'h', 'Willow Jerde'),
-('802', 'a', 'Millie Lynch DVM'),
-('31842', 'f', 'Karson Bradtke'),
-('633262420', 'c', 'Eliza Bechtelar'),
-('8257', 'd', 'Camylle Bauch IV'),
-('4998', 'r', 'Neil Smith'),
-('455606993', 'q', 'Bridget Purdy'),
-('757319', 'e', 'Dr. Letitia Bechtelar'),
-('40990', 'r', 'Tyrell Goldner'),
-('64816', 'c', 'Josefa Collier'),
-('564', 's', 'Ford Kilback'),
-('', 'a', 'Prof. Charlene Abernathy'),
-('9', 's', 'Mabelle Lindgren'),
-('4503093', 'e', 'Prof. Ransom Schumm'),
-('726305', 'q', 'Nayeli O\'Conner'),
-('', 'e', 'Layla Schaden'),
-('5701036', 'a', 'Dr. Frances Brown'),
-('667812', 'v', 'Prof. Elias Bernhard'),
-('', 'n', 'Everett Torphy'),
-('414765', 'v', 'Miss Joelle Halvorson V'),
-('3671', 'l', 'Mrs. Idella Medhurst'),
-('', 's', 'Carleton Sanford'),
-('4251', 'e', 'Coby Abbott'),
-('752', 'm', 'Frederik Wyman'),
-('49171', 'e', 'Kaley Rau'),
-('270', 'v', 'Kayley Hackett'),
-('3688', 'i', 'Forrest McLaughlin'),
-('192', 'n', 'Wilfrid Prosacco'),
-('9669', 'a', 'Destin Kautzer'),
-('8838', 'n', 'Antonia Goyette'),
-('64', 'a', 'Brisa Pollich'),
-('791', 'q', 'Celine Beer'),
-('7188', 'q', 'Cayla Waters');
+('10291', 'k', 'Camden'),
+('1080874', 'c', 'Aubrey'),
+('1161', 'g', 'Maxine'),
+('127', 'j', 'Melody'),
+('12896', 'v', 'Marcella'),
+('129673', 'i', 'Kolby'),
+('13564969', 't', 'Felipa'),
+('144174449', 'u', 'Marjory'),
+('1451817', 'u', 'Elfrieda'),
+('15313', 'q', 'Hattie'),
+('159', 't', 'Gia'),
+('16', 'f', 'Betsy'),
+('188650605', 'h', 'Elise'),
+('193', 'u', 'Lambert'),
+('194799', 'k', 'Cathryn'),
+('2', 'v', 'Manuel'),
+('20583752', 'q', 'Pierre'),
+('2091545', 'i', 'Braxton'),
+('209228776', 'e', 'Lindsay'),
+('209599265', 'g', 'Noemi'),
+('21', 'v', 'Albina'),
+('22', 'v', 'Rickie'),
+('22692342', 'j', 'Jonathan'),
+('243582659', 'z', 'Maurine'),
+('248286147', 'w', 'Miguel'),
+('2564121', 'e', 'Grant'),
+('282568', 'i', 'Laurianne'),
+('3', 'r', 'Jan'),
+('3010', 'r', 'Rey'),
+('31', 'i', 'Earlene'),
+('31167472', 'r', 'Sydnie'),
+('32487013', 'i', 'Jackeline'),
+('328501', 'r', 'Barrett'),
+('33', 'g', 'Fletcher'),
+('33123182', 'i', 'Emmie'),
+('38', 'e', 'Agustin'),
+('389', 'j', 'Arjun'),
+('38990', 'a', 'Ivy'),
+('4', 'a', 'Danika'),
+('405261', 's', 'Eda'),
+('42587462', 'i', 'Vivianne'),
+('428391380', 'm', 'Clara'),
+('43335390', 'l', 'Charity'),
+('43880252', 's', 'Alice'),
+('44', 'r', 'Amya'),
+('46232697', 'i', 'Ramon'),
+('46767', 'b', 'Ursula'),
+('4733210', 'i', 'Providenci'),
+('4743385', 'i', 'Asia'),
+('491', 'i', 'Freeda'),
+('49414', 'o', 'Ross'),
+('4976150', 'c', 'Harold'),
+('5', 'w', 'Garrick'),
+('53', 's', 'Dorcas'),
+('5597', 'j', 'Trevion'),
+('6', 'i', 'Enola'),
+('61', 'p', 'Godfrey'),
+('6219', 'c', 'Maria'),
+('6261', 't', 'Helen'),
+('629', 'f', 'Evan'),
+('65', 'y', 'Garrick'),
+('65062', 'g', 'Caleb'),
+('65094589', 'i', 'Mohammad'),
+('65501', 'e', 'Yazmin'),
+('66444592', 'p', 'Dave'),
+('67187', 'a', 'Rhea'),
+('7', 'w', 'Thelma'),
+('706', 'j', 'Loren'),
+('719', 'g', 'Hilbert'),
+('7210', 'c', 'Carley'),
+('733033', 'q', 'Lauryn'),
+('7386825', 'j', 'Faye'),
+('76', 'l', 'Tressa'),
+('77369', 'm', 'Reva'),
+('775', 'f', 'Adaline'),
+('77599', 'g', 'Zita'),
+('79', 'l', 'Isabel'),
+('8', 'j', 'Zella'),
+('80337', 'p', 'Aliza'),
+('80815931', 'p', 'Shakira'),
+('811315206', 'f', 'Yvonne'),
+('8224151', 'k', 'Madyson'),
+('82987126', 'q', 'Jameson'),
+('84286569', 'q', 'Barney'),
+('86912427', 'v', 'Pedro'),
+('883', 'e', 'Berry'),
+('8842100', 'r', 'Roger'),
+('8889', 'v', 'Rickey'),
+('88899', 'x', 'Isaias'),
+('9', 'c', 'Christop'),
+('901', 'u', 'Ramon'),
+('93414', 'm', 'Foster'),
+('943', 'g', 'Janie'),
+('957862', 'd', 'Domenic'),
+('9688', 'n', 'Loyal'),
+('97084', 'k', 'Elfrieda'),
+('974295', 'h', 'Malika'),
+('98', 'p', 'Rowland'),
+('993548', 'b', 'Rahul');
 
 --
 -- Indexes for dumped tables
@@ -167,17 +165,13 @@ INSERT INTO `mahasiswa` (`nim`, `golongan`, `name`) VALUES
 -- Indexes for table `account`
 --
 ALTER TABLE `account`
-  ADD PRIMARY KEY (`id_account`);
+  ADD PRIMARY KEY (`email`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- Indexes for table `mahasiswa`
 --
-
---
--- AUTO_INCREMENT for table `account`
---
-ALTER TABLE `account`
-  MODIFY `id_account` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+ALTER TABLE `mahasiswa`
+  ADD PRIMARY KEY (`nim`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
