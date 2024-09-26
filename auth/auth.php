@@ -32,8 +32,8 @@ function login($data)
 {
     global $con;
 
-    $email = $_POST["email"];
-    $password = $_POST["password"];
+    $email = $data["email"];
+    $password = $data["password"];
 
     $query = "SELECT * FROM account WHERE email = '$email'";
     $result = $con->query($query);
